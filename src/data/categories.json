@@ -1,0 +1,13 @@
+[
+  { "id": "all", "name": "Semua", "image": "/img/all.png" },
+  { "id": "Katsu", "name": "Katsu", "image": "/img/katsu/Chicken-Katsu-Curry.jpg" },
+  { "id": "Katsu Slayer", "name": "Katsu Slayer", "image": "/img/katsu-slayer/Katsu-Slayer-Mozzarella.jpg" },
+  { "id": "Minuman", "name": "Minuman", "image": "/img/minuman/Milo.jpg" },
+  { "id": "Potato Cream", "name": "Potato Cream", "image": "/img/potato-cream/Potato-Cheese-Bread.jpg" },
+  { "id": "Ramen", "name": "Ramen", "image": "/img/ramen/Ramen-Tokyo.jpg" },
+  { "id": "Rice Bowl", "name": "Rice Bowl", "image": "/img/rice-bowl/Rice-Bowl-Egg-Mayo-Beef-Shortplate.jpg" },
+  { "id": "Teppanyaki", "name": "Teppanyaki", "image": "/img/teppanyaki/Teppanyaki-Ayam.jpg" },
+  { "id": "Toppoki", "name": "Toppoki", "image": "/img/toppoki/Toppoki-Karage-Keju.jpg" },
+  { "id": "Ramyeon Kuah", "name": "Ramyeon Kuah", "image": "/img/ramyeon/Ramyeon-Kuah.jpg" },
+  { "id": "Topping", "name": "Topping", "image": "/img/topping/Kentang-Goreng.jpg" }
+]

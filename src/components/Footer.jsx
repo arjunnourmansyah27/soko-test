@@ -1,0 +1,127 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "../index.css";
+
+const Footer = () => {
+  return (
+    <footer className="bg-[#E86403] text-white text-sm">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Kolom 1: Logo */}
+        <div className="space-y-4">
+          <img
+            src="/img/sokokutei-white.webp"
+            alt="Sokokutei Logo"
+            className="w-28 md:w-40"
+          />
+        </div>
+
+        {/* Kolom 2: PT RAJASAKA FOOD SOLUTION + Alamat */}
+        <div className="colum2_footer">
+          <p className="font-semibold mb-5 text-[17px]">
+            PT RAJASAKA FOOD SOLUTION
+          </p>
+          <p className="text-[16px]">
+            Jl. Perdamaian No. F12, RT.4/RW.6, Tanah Baru, Kecamatan Beji, Kota
+            Depok, Jawa Barat 16426
+          </p>
+          <div className="mt-3 flex items-center space-x-2">
+            <i className="fas fa-phone"></i>
+            <span>087781965378</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <i className="fas fa-envelope"></i>
+            <span>rajasakasembadadunia@gmail.com</span>
+          </div>
+        </div>
+
+        {/* Kolom 3: Informasi */}
+        <div className="md:ml-16">
+          <h4 className="font-semibold mb-4 text-[17px]">INFORMASI</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/about" className="hover:underline">
+                Tentang Sokoku Tei
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:underline">
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:underline">
+                Kontak Kami
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:underline">
+                Syarat & Ketentuan
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:underline">
+                Kebijakan Privasi
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Kolom 4: Tetap Terhubung media sosial dan Pemesanan Online */}
+        <div>
+          <h4 className="font-semibold mb-4 text-[17px]">TETAP TERHUBUNG</h4>
+          <ul className="space-y-2 mb-6">
+            <li className="flex items-center space-x-2">
+              <i className="fas fa-mobile-alt"></i>
+              <a href="https://wa.me/6287781965378" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                087781965378
+              </a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <i className="fab fa-instagram"></i>
+              <a
+                href="https://www.instagram.com/sokokutei"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                @sokokutei
+              </a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <i className="fab fa-tiktok"></i>
+              <a
+                href="https://www.tiktok.com/@sokokutei"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                @sokokutei
+              </a>
+            </li>
+          </ul>
+
+          <h4 className="font-bold mb-4 text-[17px]">PEMESANAN ONLINE</h4>
+          <div className="flex flex-wrap gap-2">
+            <img src="/img/ojol/grabfood.svg" alt="GrabFood" className="w-20" />
+            <img src="/img/ojol/gofood.svg" alt="GoFood" className="w-20" />
+            <img
+              src="/img/ojol/shopeefood.svg"
+              alt="ShopeeFood"
+              className="w-20"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Copyright */}
+      <div className="border-t border-white/30 mt-8 pb-10">
+        <div className="max-w-7xl mx-auto px-4 py-4 text-center text-shadow-sm text-white">
+          Copyrights © 2025 Sokoku Tei (PT Rajasaka Food Solution), All Rights
+          Reserved
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

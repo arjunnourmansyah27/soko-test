@@ -1,0 +1,47 @@
+/* Mengimpor Montserrat dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;500&display=swap');
+
+/* Mengimpor Tailwind CSS */
+@import "tailwindcss";
+
+/* Menggunakan Montserrat sebagai font default */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Menggunakan direktif Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mengubah warna bullets */
+.swiper-pagination-bullet {
+  background-color: #FF5722 !important; /* Ganti dengan warna yang diinginkan */
+}
+
+/* Mengubah warna bullets saat aktif */
+.swiper-pagination-bullet-active {
+  background-color: #FF5722 !important; /* Ganti dengan warna yang diinginkan */
+}
+
+/* Mengubah warna tombol navigation (Next button) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FF5722 !important; /* Ganti dengan warna yang diinginkan */
+}
+
+/* Mengubah warna tombol navigation saat hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #FF5722; /* Ganti dengan warna yang diinginkan */
+}
+
+/* footer */
+.space-y-2 {
+  font-size: 16px;
+}
+
+.colum2_footer span {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
