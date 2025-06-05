@@ -1,13 +1,27 @@
-import React, { useState } from "react";
-import productsData from "../data/products.json";
-import categoriesData from "../data/categories.json";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const Menu = () => {
+  const [productsData, setProductsData] = useState([]);
+  const [categoriesData, setCategoriesData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  useEffect(() => {
+    // Mengambil data products.json dari folder public
+    fetch("/data/products.json")
+      .then((response) => response.json())
+      .then((data) => setProductsData(data))
+      .catch((error) => console.error("Error loading products:", error));
+
+    // Mengambil data categories.json dari folder public
+    fetch("/data/categories.json")
+      .then((response) => response.json())
+      .then((data) => setCategoriesData(data))
+      .catch((error) => console.error("Error loading categories:", error));
+  }, []);
 
   const filteredProducts =
     selectedCategory === "all"

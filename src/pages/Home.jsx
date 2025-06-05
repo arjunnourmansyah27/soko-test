@@ -11,7 +11,7 @@ const Home = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("/src/data/images-home.json")
+    fetch("/data/images-home.json")
       .then((response) => response.json())
       .then((data) => setImages(data));
   }, []);

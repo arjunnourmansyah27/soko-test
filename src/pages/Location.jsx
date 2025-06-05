@@ -19,7 +19,7 @@ const Location = () => {
   useEffect(() => {
     const fetchOutlets = async () => {
       try {
-        const response = await fetch("/src/data/outlets.json");
+        const response = await fetch("/data/outlets.json");
         const data = await response.json();
         setOutlets(data);
         setLoading(false);

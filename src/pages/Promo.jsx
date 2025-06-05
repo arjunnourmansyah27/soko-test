@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import promoData from "../data/promoData.json";
+import React, { useState, useEffect } from "react";
 
 const Promo = () => {
+  const [promoData, setPromoData] = useState([]);
   const [activePromo, setActivePromo] = useState(null);
+
+  // Fetch data dari file JSON yang ada di folder public/data
+  useEffect(() => {
+    fetch("/data/promoData.json")
+      .then((response) => response.json())
+      .then((data) => setPromoData(data))
+      .catch((error) => console.error("Error loading promo data:", error));
+  }, []);
 
   const openModal = (promo) => setActivePromo(promo);
   const closeModal = () => setActivePromo(null);
@@ -26,33 +34,38 @@ const Promo = () => {
 
       {/* Card Promo */}
       <div className="py-10 px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-6 bg-white">
-        {promoData.map((promo, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 flex flex-col"
-          >
-            <img
-              src={promo.image}
-              alt={promo.title}
-              className="w-full object-cover"
-            />
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-gray-800 mb-1">
-                  {promo.title}
-                </h3>
-                {promo.desc && (
-                  <p className="text-gray-600 text-sm mb-3">{promo.desc}</p>
-                )}
+        {promoData.length > 0 ? (
+          promoData.map((promo, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 flex flex-col"
+            >
+              <img
+                src={promo.image}
+                alt={promo.title}
+                className="w-full object-cover"
+              />
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-1">
+                    {promo.title}
+                  </h3>
+                  {promo.desc && (
+                    <p className="text-gray-600 text-sm mb-3">{promo.desc}</p>
+                  )}
+                </div>
+                <button
+                  onClick={() => openModal(promo)}
+                  className="mt-auto border bg-orange-400 hover:bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold text-white transition"
+                >
+                  {promo.btnText}
+                </button>
               </div>
-              <button
-                onClick={() => openModal(promo)}
-                className="mt-auto border bg-orange-400 hover:bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold text-white transition">
-                {promo.btnText}
-              </button>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Loading promo data...</p> // Menampilkan pesan loading jika data belum ada
+        )}
       </div>
 
       {/* Modal */}

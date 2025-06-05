@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "src": "/img/bg-home/banner-1.svg",
+    "alt": "Slide 1"
+  },
+  {
+    "id": 2,
+    "src": "/img/bg-home/banner-2.svg",
+    "alt": "Slide 2"
+  },
+  {
+    "id": 3,
+    "src": "/img/bg-home/banner-3.svg",
+    "alt": "Slide 3"
+  }
+]

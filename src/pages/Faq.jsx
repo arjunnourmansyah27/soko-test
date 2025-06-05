@@ -5,7 +5,7 @@ const Faq = () => {
 
   // Fetch FAQ data from the JSON file
   useEffect(() => {
-    fetch("/src/data/faq-data.json")
+    fetch("/data/faq-data.json")
       .then((response) => response.json())
       .then((data) => setFaqs(data))
       .catch((error) => console.error("Error fetching FAQ data:", error));
