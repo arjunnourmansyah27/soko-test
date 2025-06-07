@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Mengimpor Link dari react-router-dom
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
+
+  // Menambahkan fungsi untuk menutup menu saat memilih link di mobile
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -21,20 +25,45 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center space-x-8 font-semibold text-base text-[#E86403]">
-          <Link to="/" className="font-bold pb-1">
+        <nav className="hidden lg:flex items-center space-x-8 font-semibold text-base text-[#363636]">
+          <Link
+            to="/"
+            className={`font-bold pb-1 ${
+              location.pathname === "/" ? "text-[#E86403]" : ""
+            }`}
+          >
             Beranda
           </Link>
-          <Link to="/about" className="hover:text-[#E86403]">
+          <Link
+            to="/about"
+            className={`hover:text-[#E86403] ${
+              location.pathname === "/about" ? "text-[#E86403]" : ""
+            }`}
+          >
             Tentang Sokoku Tei
           </Link>
-          <Link to="/menu" className="hover:text-[#E86403]">
+          <Link
+            to="/menu"
+            className={`hover:text-[#E86403] ${
+              location.pathname === "/menu" ? "text-[#E86403]" : ""
+            }`}
+          >
             Menu Kami
           </Link>
-          <Link to="/location" className="hover:text-[#E86403]">
+          <Link
+            to="/location"
+            className={`hover:text-[#E86403] ${
+              location.pathname === "/location" ? "text-[#E86403]" : ""
+            }`}
+          >
             Lokasi
           </Link>
-          <Link to="/promo" className="hover:text-[#E86403]">
+          <Link
+            to="/promo"
+            className={`hover:text-[#E86403] ${
+              location.pathname === "/promo" ? "text-[#E86403]" : ""
+            }`}
+          >
             Berita & Promo
           </Link>
         </nav>
@@ -69,22 +98,78 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <nav className="lg:hidden bg-white px-4 pb-4 font-semibold text-[#E86403] space-y-3">
-          <Link to="/" className="block font-bold text-[#E86403]">
+        <nav
+          className="lg:hidden bg-white px-6 py-8 font-semibold text-[#363636] space-y-5 fixed top-0 right-0 h-full w-[70%] transition-transform transform ease-in-out duration-300 z-50"
+          style={{
+            transform: isMobileMenuOpen ? "translateX(0)" : "translateX(100%)",
+          }}
+        >
+          {/* Tombol X untuk menutup menu */}
+          <div className="flex justify-end">
+            <button
+              onClick={closeMobileMenu}
+              className="text-[#E86403] text-3xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          <Link
+            to="/"
+            className={`block font-bold ${
+              location.pathname === "/" ? "text-[#E86403]" : ""
+            }`}
+            onClick={closeMobileMenu}
+          >
             Beranda
           </Link>
-          <Link to="/about" className="block hover:text-[#E86403]">
-          Tentang Sokoku Tei
+          <Link
+            to="/about"
+            className={`block hover:text-[#E86403] ${
+              location.pathname === "/about" ? "text-[#E86403]" : ""
+            }`}
+            onClick={closeMobileMenu}
+          >
+            Tentang Sokoku Tei
           </Link>
-          <Link to="/menu" className="block hover:text-[#E86403]">
+          <Link
+            to="/menu"
+            className={`block hover:text-[#E86403] ${
+              location.pathname === "/menu" ? "text-[#E86403]" : ""
+            }`}
+            onClick={closeMobileMenu}
+          >
             Menu Kami
           </Link>
-          <Link to="/location" className="block hover:text-[#E86403]">
+          <Link
+            to="/location"
+            className={`block hover:text-[#E86403] ${
+              location.pathname === "/location" ? "text-[#E86403]" : ""
+            }`}
+            onClick={closeMobileMenu}
+          >
             Lokasi
           </Link>
-          <Link to="/promo" className="block hover:text-[#E86403]">
+          <Link
+            to="/promo"
+            className={`block hover:text-[#E86403] ${
+              location.pathname === "/promo" ? "text-[#E86403]" : ""
+            }`}
+            onClick={closeMobileMenu}
+          >
             Berita & Promo
           </Link>
+
+          {/* Background bawah menu */}
+          <div
+            className="absolute bottom-0 left-0 w-full h-52"
+            style={{
+              backgroundImage: "url('/img/wave.svg')", // Ganti dengan path gambar kamu
+              backgroundSize: "cover", // Menyebabkan gambar menutupi seluruh elemen
+              backgroundPosition: "center", // Memastikan gambar berada di tengah
+              backgroundRepeat: "no-repeat", // Menghindari gambar terulang
+            }}
+          ></div>
         </nav>
       )}
     </header>

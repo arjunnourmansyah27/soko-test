@@ -25,12 +25,22 @@ const Footer = () => {
             Depok, Jawa Barat 16426
           </p>
           <div className="mt-3 flex items-center space-x-2">
-            <i className="fas fa-phone"></i>
-            <span>087781965378</span>
+            <a
+              href="tel:+6287781965378"
+              className="flex items-center space-x-2 hover:underline hover:font-bold"
+            >
+              <i className="fas fa-phone p-2 bg-white text-[#F17D00] rounded-full mb-2"></i>
+              <span>087781965378</span>
+            </a>
           </div>
           <div className="flex items-center space-x-2">
-            <i className="fas fa-envelope"></i>
-            <span>rajasakasembadadunia@gmail.com</span>
+            <a
+              href="mailto:rajasakasembadadunia@gmail.com"
+              className="flex items-center space-x-2 hover:underline hover:font-bold"
+            >
+              <i className="fas fa-envelope p-2 bg-white text-[#F17D00] rounded-full"></i>
+              <span>rajasakasembadadunia@gmail.com</span>
+            </a>
           </div>
         </div>
 
@@ -39,27 +49,27 @@ const Footer = () => {
           <h4 className="font-semibold mb-4 text-[17px]">INFORMASI</h4>
           <ul className="space-y-2">
             <li>
-              <Link to="/about" className="hover:underline">
+              <Link to="/about" className="hover:underline hover:font-bold">
                 Tentang Sokoku Tei
               </Link>
             </li>
             <li>
-              <Link to="/faq" className="hover:underline">
+              <Link to="/faq" className="hover:underline hover:font-bold">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:underline">
+              <Link to="#" className="hover:underline hover:font-bold">
                 Kontak Kami
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:underline">
+              <Link to="#" className="hover:underline hover:font-bold">
                 Syarat & Ketentuan
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:underline">
+              <Link to="#" className="hover:underline hover:font-bold">
                 Kebijakan Privasi
               </Link>
             </li>
@@ -71,44 +81,75 @@ const Footer = () => {
           <h4 className="font-semibold mb-4 text-[17px]">TETAP TERHUBUNG</h4>
           <ul className="space-y-2 mb-6">
             <li className="flex items-center space-x-2">
-              <i className="fas fa-mobile-alt"></i>
-              <a href="https://wa.me/6287781965378" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                087781965378
+              <a
+                href="https://wa.me/6287781965378"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:underline hover:font-bold"
+              >
+                <i className="fab fa-whatsapp p-2 bg-white text-[#F17D00] rounded-full"></i>
+                <span>087781965378</span>
               </a>
             </li>
             <li className="flex items-center space-x-2">
-              <i className="fab fa-instagram"></i>
               <a
                 href="https://www.instagram.com/sokokutei"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="flex items-center space-x-2 hover:underline hover:font-bold"
               >
-                @sokokutei
+                <i className="fab fa-instagram p-2 bg-white text-[#F17D00] rounded-full"></i>
+                <span>@sokokutei</span>
               </a>
             </li>
             <li className="flex items-center space-x-2">
-              <i className="fab fa-tiktok"></i>
               <a
                 href="https://www.tiktok.com/@sokokutei"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="flex items-center space-x-2 hover:underline hover:font-bold"
               >
-                @sokokutei
+                <i className="fab fa-tiktok p-2 bg-white text-[#F17D00] rounded-full"></i>
+                <span>@sokokutei</span>
               </a>
             </li>
           </ul>
 
           <h4 className="font-bold mb-4 text-[17px]">PEMESANAN ONLINE</h4>
           <div className="flex flex-wrap gap-2">
-            <img src="/img/ojol/grabfood.svg" alt="GrabFood" className="w-20" />
-            <img src="/img/ojol/gofood.svg" alt="GoFood" className="w-20" />
-            <img
-              src="/img/ojol/shopeefood.svg"
-              alt="ShopeeFood"
-              className="w-20"
-            />
+            <a
+              href="https://www.grab.com/id/food/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/img/ojol/grabfood.svg"
+                alt="GrabFood"
+                className="w-20 cursor-pointer"
+              />
+            </a>
+            <a
+              href="https://www.go-jek.com/gofood"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/img/ojol/gofood.svg"
+                alt="GoFood"
+                className="w-20 cursor-pointer"
+              />
+            </a>
+            <a
+              href="https://shopee.co.id/shopeefood"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/img/ojol/shopeefood.svg"
+                alt="ShopeeFood"
+                className="w-20 cursor-pointer"
+              />
+            </a>
           </div>
         </div>
       </div>

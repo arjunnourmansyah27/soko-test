@@ -20,7 +20,7 @@ const Promo = () => {
       {/* Header */}
       <div className="bg-[#E86403] text-white text-center py-10 relative">
         <div className="absolute inset-0 bg-[url('/img/wave.svg')] bg-repeat opacity-35"></div>
-        <h2 className="relative inline-block text-2xl md:text-4xl font-extrabold bg-[url('/img/yellow.webp')] bg-no-repeat bg-cover bg-center py-2 px-8">
+        <h2 className="relative inline-block text-2xl md:text-4xl font-extrabold bg-[url('/img/yellow.webp')] bg-no-repeat bg-cover bg-center py-2 px-14 md:px-8">
           Berita & Promo
         </h2>
         <p className="mt-4 text-sm md:text-lg font-light">
@@ -33,21 +33,21 @@ const Promo = () => {
       </div>
 
       {/* Card Promo */}
-      <div className="py-10 px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-6 bg-white">
+      <div className="py-10 px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white">
         {promoData.length > 0 ? (
           promoData.map((promo, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 flex flex-col"
+              className="bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 flex flex-col mx-auto" // Mengatur margin agar card tetap berada di tengah
             >
               <img
                 src={promo.image}
                 alt={promo.title}
-                className="w-full object-cover"
+                className="w-full object-cover h-60"
               />
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-1">
+                  <h3 className="text-lg font-bold text-shadow-gray-700 mb-1">
                     {promo.title}
                   </h3>
                   {promo.desc && (

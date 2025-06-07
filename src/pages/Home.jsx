@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <section>
       {/* Slider Section 480px*/}
-      <div className="h-[550px]">
+      <div className="md:h-[550px]">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           navigation
