@@ -176,7 +176,7 @@ const Header = () => {
 
           {/* Background Footer */}
           <div
-            className="absolute bottom-0 left-0 w-full h-52"
+            className="absolute bottom-0 left-0 w-full h-64"
             style={{
               backgroundImage: "url('/img/wave.svg')", // Replace with your image path
               backgroundSize: "cover",

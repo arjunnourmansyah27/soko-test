@@ -58,21 +58,21 @@ const Footer = () => {
                 FAQ
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="#" className="hover:underline hover:font-bold">
                 Kontak Kami
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="#" className="hover:underline hover:font-bold">
                 Syarat & Ketentuan
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="#" className="hover:underline hover:font-bold">
                 Kebijakan Privasi
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 

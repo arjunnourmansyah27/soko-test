@@ -24,7 +24,7 @@ const Faq = () => {
       <div className="bg-[#E86403] relative text-white py-10 md:py-9 text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('/img/wave.svg')] bg-repeat opacity-35"></div>
         <h2 className="relative inline-block text-white text-2xl md:text-4xl font-extrabold bg-[url('/img/yellow.webp')] bg-no-repeat bg-cover bg-center py-2 px-32 md:py-4 md:px-52">
-          Frequently
+          F A Q
         </h2>
         <p className="mt-4 text-sm md:text-lg text-white font-light">
           Temukan jawaban atas pertanyaan yang sering diajukan mengenai layanan,
