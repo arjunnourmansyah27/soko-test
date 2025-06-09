@@ -98,7 +98,7 @@ const Location = () => {
                     href={outlet.map_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-4 px-5 py-2 bg-green-500 text-white text-sm rounded-full font-semibold hover:bg-green-600 transition duration-300"
+                    className="inline-block mt-4 px-5 py-2 bg-orange-400 text-white text-sm rounded-full font-semibold hover:bg-green-600 transition duration-300"
                   >
                     <i className="fas fa-map-marker-alt mr-2"></i>Lihat Peta
                   </a>

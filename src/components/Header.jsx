@@ -70,9 +70,9 @@ const Header = () => {
 
         {/* Mobile Hamburger */}
         <div className="lg:hidden" onClick={toggleMobileMenu}>
-          <button className="text-[#E86403] focus:outline-none">
+          <button className="bg-[#E86403] focus:outline-none p-2 rounded-[10px]">
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -89,6 +89,7 @@ const Header = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M4 6h16M4 12h16M4 18h16"
+                  className="stroke-white"
                 />
               )}
             </svg>
@@ -98,26 +99,31 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-opacity-10 z-40 backdrop-blur-sm"></div>
+      )}
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
         <nav
-          className="lg:hidden bg-white px-6 py-8 font-semibold text-[#363636] space-y-5 fixed top-0 right-0 h-full w-[70%] transition-transform transform ease-in-out duration-300 z-50"
+          className="lg:hidden bg-[#E86403] px-6 py-8 font-semibold text-[#363636] space-y-5 fixed top-0 right-0 h-full w-[80%] transition-transform transform ease-in-out duration-300 z-50"
           style={{
             transform: isMobileMenuOpen ? "translateX(0)" : "translateX(100%)",
           }}
         >
-          {/* Tombol X untuk menutup menu */}
+          {/* Close Button */}
           <div className="flex justify-end">
-            <button
-              onClick={closeMobileMenu}
-              className="text-[#E86403] text-3xl"
-            >
+            <button onClick={closeMobileMenu} className="text-white text-5xl">
               &times;
             </button>
           </div>
 
+          {/* Menu Links */}
           <Link
             to="/"
-            className={`block font-bold ${
-              location.pathname === "/" ? "text-[#E86403]" : ""
+            className={`block ${
+              location.pathname === "/"
+                ? "font-bold text-white"
+                : "text-[#363636]"
             }`}
             onClick={closeMobileMenu}
           >
@@ -125,8 +131,10 @@ const Header = () => {
           </Link>
           <Link
             to="/about"
-            className={`block hover:text-[#E86403] ${
-              location.pathname === "/about" ? "text-[#E86403]" : ""
+            className={`block ${
+              location.pathname === "/about"
+                ? "font-bold text-white"
+                : "hover:text-white"
             }`}
             onClick={closeMobileMenu}
           >
@@ -134,8 +142,10 @@ const Header = () => {
           </Link>
           <Link
             to="/menu"
-            className={`block hover:text-[#E86403] ${
-              location.pathname === "/menu" ? "text-[#E86403]" : ""
+            className={`block ${
+              location.pathname === "/menu"
+                ? "font-bold text-white"
+                : "hover:text-white"
             }`}
             onClick={closeMobileMenu}
           >
@@ -143,8 +153,10 @@ const Header = () => {
           </Link>
           <Link
             to="/location"
-            className={`block hover:text-[#E86403] ${
-              location.pathname === "/location" ? "text-[#E86403]" : ""
+            className={`block ${
+              location.pathname === "/location"
+                ? "font-bold text-white"
+                : "hover:text-white"
             }`}
             onClick={closeMobileMenu}
           >
@@ -152,22 +164,24 @@ const Header = () => {
           </Link>
           <Link
             to="/promo"
-            className={`block hover:text-[#E86403] ${
-              location.pathname === "/promo" ? "text-[#E86403]" : ""
+            className={`block ${
+              location.pathname === "/promo"
+                ? "font-bold text-white"
+                : "hover:text-white"
             }`}
             onClick={closeMobileMenu}
           >
             Berita & Promo
           </Link>
 
-          {/* Background bawah menu */}
+          {/* Background Footer */}
           <div
             className="absolute bottom-0 left-0 w-full h-52"
             style={{
-              backgroundImage: "url('/img/wave.svg')", // Ganti dengan path gambar kamu
-              backgroundSize: "cover", // Menyebabkan gambar menutupi seluruh elemen
-              backgroundPosition: "center", // Memastikan gambar berada di tengah
-              backgroundRepeat: "no-repeat", // Menghindari gambar terulang
+              backgroundImage: "url('/img/wave.svg')", // Replace with your image path
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           ></div>
         </nav>
