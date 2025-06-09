@@ -84,9 +84,14 @@ const Home = () => {
         </p>
 
         {/* Tombol Lihat Video */}
-        <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-full text-sm">
+        <a
+          href="https://www.instagram.com/reel/DDgJgRXyecT/?igsh=c2tyaTA5NWkwY2hv"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-full text-sm"
+        >
           LIHAT VIDEO
-        </button>
+        </a>
       </div>
 
       {/* Menu Kami Section */}
