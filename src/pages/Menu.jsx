@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 const Menu = () => {
   const [productsData, setProductsData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
     // Mengambil data products.json dari folder public
@@ -36,8 +36,8 @@ const Menu = () => {
         <h2 className="relative inline-block text-white text-2xl md:text-4xl font-extrabold bg-[url('/img/yellow.webp')] bg-no-repeat bg-cover bg-center py-2 px-12 md:py-4 md:px-20">
           Menu Sokoku Tei
         </h2>
-        <p className="mt-4 text-sm md:text-lg text-white font-light">Berikut menu yang kami
-          tawarkan untuk berbagai keperluan Anda.
+        <p className="mt-4 text-sm md:text-lg text-white font-light">
+          Berikut menu yang kami tawarkan untuk berbagai keperluan Anda.
         </p>
         <div className="absolute top-0 right-0 w-24 h-24 bg-[url('/img/cloud-pattern.svg')] bg-no-repeat bg-contain"></div>
         <div className="absolute bottom-0 left-0 bg-[url('/img/wave2.svg')] bg-no-repeat bg-contain w-10 h-10 md:w-32 md:h-32 opacity-80"></div>
@@ -67,7 +67,7 @@ const Menu = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`flex flex-col items-center cursor-pointer transition-transform duration-300`}
                 >
-                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white shadow flex items-center justify-center overflow-hidden">
+                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden cursor-pointer transition-transform duration-300 hover:shadow-2xl hover:scale-105">
                     <img
                       src={cat.image}
                       alt={cat.name}
