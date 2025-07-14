@@ -67,7 +67,11 @@ const Menu = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`flex flex-col items-center cursor-pointer transition-transform duration-300`}
                 >
-                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden cursor-pointer transition-transform duration-300 hover:shadow-2xl hover:scale-105">
+                  <div
+                    className={`w-24 h-24 md:w-28 md:h-28 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden cursor-pointer transition-transform duration-300 hover:shadow-2xl hover:scale-105 ${
+                      selectedCategory === cat.id ? "border-4 border-[#FF7A00]" : ""
+                    }`}
+                  >
                     <img
                       src={cat.image}
                       alt={cat.name}

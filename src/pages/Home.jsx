@@ -6,10 +6,29 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate } from "react-router-dom";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
   const [images, setImages] = useState([]);
 
+  // AOS Scroll Animasi
+  useEffect(() => {
+    AOS.init({
+      duration: 800,      // ms; feel free to tweak
+      offset: 100,        // px before element enters viewport
+      easing: 'ease-in-out',
+      once: true,         // run only the first time it appears
+      disable: 'mobile'   // optional performance safeguard
+    });
+  }, []);
+
+  useEffect(() => {
+    if (images.length) {
+      AOS.refresh();      // or AOS.refreshHard() for deep recalcs
+    }
+  }, [images]);
+  
   useEffect(() => {
     fetch("/data/images-home.json")
       .then((response) => response.json())
@@ -48,7 +67,9 @@ const Home = () => {
           backgroundImage: "url('/img/bg-home/home1.svg')", // motif sushi samar
           backgroundRepeat: "repeat",
           backgroundSize: "contain",
-        }}>
+        }}
+        data-aos="fade-up"
+      >
         {/* Ornamen kiri */}
         <img
           src="/img/bg-home/ornamen.svg"
@@ -60,20 +81,28 @@ const Home = () => {
         <div className="absolute bottom-8 right-8 w-14 h-14 bg-orange-600 rounded-full"></div>
 
         {/* Tag Tentang Kami */}
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-4" data-aos="fade-up" data-aos-duration="1500">
           <div className="bg-yellow-400 text-red-600 font-semibold rounded-full px-4 py-2 text-sm">
             Tentang Kami
           </div>
         </div>
 
         {/* Judul Besar */}
-        <h2 className="text-[28px] md:text-3xl font-extrabold leading-snug mb-6">
+        <h2
+          className="text-[28px] md:text-3xl font-extrabold leading-snug mb-6"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
           SEKALI COBA <span className="text-orange-400">LANGSUNG</span> JATUH
           CINTA
         </h2>
 
         {/* Paragraf */}
-        <p className="text-gray-700 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-8">
+        <p
+          className="text-gray-700 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-8"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
           Sokoku Tei adalah restoran yang menyajikan perpaduan cita rasa
           autentik Jepang dan Korea. Restoran ini pertama kali dibuka di TMP
           Kalibata pada November 2023 dan kini telah berkembang dengan membuka
@@ -89,6 +118,8 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-full text-sm"
+          data-aos="fade-up"
+          data-aos-duration="1500"
         >
           LIHAT VIDEO
         </a>
