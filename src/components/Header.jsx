@@ -15,7 +15,7 @@ const Header = () => {
       <div className="flex items-center justify-between px-4 lg:px-20 py-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to="/">
+          <Link to="#">
             <img
               src="/img/logo-sokokutei.webp"
               alt="Sokoku Tei Logo"
@@ -103,89 +103,86 @@ const Header = () => {
       )}
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <nav
-          className="lg:hidden bg-[#E86403] px-6 py-8 font-semibold text-[#363636] space-y-5 fixed top-0 right-0 h-full w-[80%] transition-transform transform ease-in-out duration-300 z-50"
-          style={{
-            transform: isMobileMenuOpen ? "translateX(0)" : "translateX(100%)",
-          }}
+      <nav
+        className={`lg:hidden bg-[#E86403] px-6 py-8 font-semibold text-[#363636] space-y-5 fixed top-0 right-0 h-full w-[80%] transition-transform transform ease-in-out duration-300 z-50 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end">
+          <button onClick={closeMobileMenu} className="text-white text-5xl">
+            &times;
+          </button>
+        </div>
+
+        {/* Menu Links */}
+        <Link
+          to="/"
+          className={`block ${
+            location.pathname === "/"
+              ? "font-bold text-white"
+              : "text-[#383838]"
+          }`}
+          onClick={closeMobileMenu}
         >
-          {/* Close Button */}
-          <div className="flex justify-end">
-            <button onClick={closeMobileMenu} className="text-white text-5xl">
-              &times;
-            </button>
-          </div>
+          Beranda
+        </Link>
+        <Link
+          to="/about"
+          className={`block ${
+            location.pathname === "/about"
+              ? "font-bold text-white"
+              : "hover:text-white"
+          }`}
+          onClick={closeMobileMenu}
+        >
+          Tentang Sokoku Tei
+        </Link>
+        <Link
+          to="/menu"
+          className={`block ${
+            location.pathname === "/menu"
+              ? "font-bold text-white"
+              : "hover:text-white"
+          }`}
+          onClick={closeMobileMenu}
+        >
+          Menu Kami
+        </Link>
+        <Link
+          to="/location"
+          className={`block ${
+            location.pathname === "/location"
+              ? "font-bold text-white"
+              : "hover:text-white"
+          }`}
+          onClick={closeMobileMenu}
+        >
+          Lokasi
+        </Link>
+        <Link
+          to="/promo"
+          className={`block ${
+            location.pathname === "/promo"
+              ? "font-bold text-white"
+              : "hover:text-white"
+          }`}
+          onClick={closeMobileMenu}
+        >
+          Berita & Promo
+        </Link>
 
-          {/* Menu Links */}
-          <Link
-            to="/"
-            className={`block ${
-              location.pathname === "/"
-                ? "font-bold text-white"
-                : "text-[#363636]"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Beranda
-          </Link>
-          <Link
-            to="/about"
-            className={`block ${
-              location.pathname === "/about"
-                ? "font-bold text-white"
-                : "hover:text-white"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Tentang Sokoku Tei
-          </Link>
-          <Link
-            to="/menu"
-            className={`block ${
-              location.pathname === "/menu"
-                ? "font-bold text-white"
-                : "hover:text-white"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Menu Kami
-          </Link>
-          <Link
-            to="/location"
-            className={`block ${
-              location.pathname === "/location"
-                ? "font-bold text-white"
-                : "hover:text-white"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Lokasi
-          </Link>
-          <Link
-            to="/promo"
-            className={`block ${
-              location.pathname === "/promo"
-                ? "font-bold text-white"
-                : "hover:text-white"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Berita & Promo
-          </Link>
-
-          {/* Background Footer */}
-          <div
-            className="absolute bottom-0 left-0 w-full h-64"
-            style={{
-              backgroundImage: "url('/img/wave.svg')", // Replace with your image path
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
-        </nav>
-      )}
+        {/* Background Footer */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-64"
+          style={{
+            backgroundImage: "url('/img/wave.svg')", // Replace with your image path
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+      </nav>
     </header>
   );
 };

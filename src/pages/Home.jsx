@@ -129,7 +129,7 @@ const Home = () => {
       <div
         className="relative bg-white px-6 py-20 overflow-hidden"
         style={{
-          backgroundImage: "url('/img/bg-home/wave-home.png')",
+          backgroundImage: "url('/img/bg-home/wave-home.webp')",
           backgroundRepeat: "repeat",
           backgroundSize: "cover",
         }}
@@ -193,8 +193,9 @@ const Home = () => {
         {/* Ilustrasi Map dan Maskot */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start z-10">
           <img
-            src="/img/bg-home/cat-road.png"
-            alt="Maskot Map"
+            src="/img/bg-home/cat-road.webp"
+            loading="lazy"
+            alt="Maskot Cat Sokoku tei"
             className="max-w-[460px] w-full"
           />
         </div>
@@ -228,7 +229,7 @@ const Home = () => {
       <div
         className="relative bg-white px-6 py-20 overflow-hidden"
         style={{
-          backgroundImage: "url('/img/bg-home/wave-home.png')",
+          backgroundImage: "url('/img/bg-home/wave-home.webp')",
           backgroundRepeat: "repeat",
           backgroundSize: "cover",
         }}
