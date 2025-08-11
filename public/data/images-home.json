@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "src": "/img/bg-home/banner-1.svg",
+    "src": "/img/bg-home/banner-1.webp",
     "alt": "Slide 1"
   },
   {
     "id": 2,
-    "src": "/img/bg-home/banner-2.svg",
+    "src": "/img/bg-home/banner-2.webp",
     "alt": "Slide 2"
   },
   {
     "id": 3,
-    "src": "/img/bg-home/banner-3.svg",
+    "src": "/img/bg-home/banner-3.webp",
     "alt": "Slide 3"
   }
 ]

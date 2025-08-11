@@ -72,7 +72,7 @@ const Home = () => {
       >
         {/* Ornamen kiri */}
         <img
-          src="/img/bg-home/ornamen.svg"
+          src="/img/bg-home/ornamen.webp"
           alt="Ornamen"
           className="absolute top-0 left-0 w-40 md:w-56"
         />
